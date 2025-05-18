@@ -88,7 +88,6 @@ export const useParallaxTransform = ({
 				setBoundingClientRect(newBoundingClientRect);
 			}
 			if (!isInit) {
-				setIsInit(true);
 				// Enable transitions after first calculation
 				setTimeout(() => {
 					setShouldApplyTransition(true);
@@ -100,10 +99,11 @@ export const useParallaxTransform = ({
 
 	// Apply transform when transitionValue changes
 	useEffect(() => {
-		if (transitionValue && isVisible) {
+		if (transitionValue && (isVisible || !isInit)) {
 			applyTransform(transitionValue);
+			setIsInit(true);
 		}
-	}, [transitionValue, isVisible, applyTransform]);
+	}, [transitionValue, isVisible, isInit, applyTransform]);
 
 	// Handle initial scale for non-overflow mode
 	useEffect(() => {
