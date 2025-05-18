@@ -28,7 +28,7 @@ export const getPercentageVisible = (
 
     const percentage = ((top - start) / (end - start)) * 100;
 
-    return Math.min(Math.max(percentage, 0), 100);
+   return Math.round(Math.min(Math.max(percentage, 0), 100) * 100) / 100;
 };
 
 export const getTranslateValue = (
