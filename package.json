@@ -33,7 +33,10 @@
     "build:vanilla": "vite build --mode vanilla",
     "dev:react": "vite playground/react",
     "dev:vanilla": "vite playground/vanilla --mode vanilla",
-    "lint": "eslint src/**/*.{ts,tsx,js} --fix"
+    "lint": "eslint src/**/*.{ts,tsx,js}",
+    "lint:fix": "eslint src/**/*.{ts,tsx,js} --fix",
+    "format": "prettier --write \"src/**/*.{ts,tsx,js,json,md}\"",
+    "format:check": "prettier --check \"src/**/*.{ts,tsx,js,json,md}\""
   },
   "peerDependencies": {
     "react": ">=17.0.0",

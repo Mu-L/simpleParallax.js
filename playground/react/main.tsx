@@ -5,39 +5,37 @@ import SimpleParallax from "../../src/react";
 const App = () => {
   const images = [
     "image.png",
+/*     "image.png",
     "image.png",
     "image.png",
-    "image.png",
-    "image.png",
+    "image.png", */
   ];
 
   return (
     <div
       style={{
-        maxWidth: "100vw",
+        width: "100vw",
+        padding: "620px 0"
       }}
     >
       <h1>COUCOU</h1>
 
       <div
         style={{
-          maxWidth: "100%",
+          maxWidth: "900px",
           display: "grid",
-          gridTemplateColumns: "repeat(5, 1fr)",
+          gridTemplateColumns: "repeat(1, 1fr)",
           gridGap: "10px",
         }}
       >
-        {Array.from(Array(50).keys()).map((line) => (
+        {Array.from(Array(1).keys()).map((line) => (
           <React.Fragment key={line} >
             {images.map((src, index) => (
                 <SimpleParallax
                   key={`${line}-${index}`}
-                  delay={0.2}
                   transition="cubic-bezier(0,0,0,1)"
                   orientation="up"
-                  scale={1.5}
-                  //overflow={true}
-                  //maxTransition={50}
+                  scale={1.6}
                 >
                   <img src={src} alt={`image-${line}-${index}`} style={{
                     maxWidth: "100%",

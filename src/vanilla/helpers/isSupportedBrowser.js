@@ -4,6 +4,6 @@
 // https://github.com/w3c/IntersectionObserver/tree/master/polyfill
 
 const isSupportedBrowser = () =>
-    Element.prototype.closest && 'IntersectionObserver' in window;
+	Element.prototype.closest && "IntersectionObserver" in window;
 
 export default isSupportedBrowser;
